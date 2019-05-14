@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block css %}
+
+{% endblock %}
+{% block content %}
+    <div class="col-md-6 col-md-offset-3">
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">作者</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+
+            <div class="-group">
+                <label for="">年龄</label>
+                <input type="text" name="age" class="form-control">
+            </div>
+            <input type="submit" class="bg-primary">
+        </form>
+    </div>
+{% endblock %}

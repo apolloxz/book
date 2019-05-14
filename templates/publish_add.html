@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block css %}
+
+{% endblock %}
+{% block content %}
+    <div class="col-md-6 col-md-offset-3">
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">出版社</label>
+                <input type="text" name="title" class="form-control">
+            </div>
+
+            <div class="-group">
+                <label for="">所在城市</label>
+                <input type="text" name="city" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="">邮箱</label>
+             <input type="text" name="email" class="form-control">
+
+            </div>
+            <input type="submit" class="bg-primary">
+        </form>
+    </div>
+{% endblock %}

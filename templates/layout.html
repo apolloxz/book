@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    {% block css %}
+    {% endblock %}
+    <style>
+        error {
+            color: red;
+            margin-left: 15px;
+        }
+
+        #header_nav {
+            margin-left: 23%;
+        }
+
+        #header_nav .add_a {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div id="header_nav">
+            <ul class="nav navbar-nav">
+                <li><a href="/index/" class="btn btn-success add_a">首页</a></li>
+                <li><a href="/books/add/" class="btn btn-primary add_a">添加书籍</a></li>
+                <li><a href="/publish/add/" class="btn btn-warning add_a">添加出版社</a></li>
+                <li><a href="/author/add/" class="btn btn-success add_a">添加作者</a></li>
+                <li><a href="/logout/" class="btn btn-danger add_a right" id="logout">注销</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container ">
+    <div class="row">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+{% block js %}
+{% endblock %}
+</body>
+</html>

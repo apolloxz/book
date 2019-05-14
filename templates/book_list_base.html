@@ -1,0 +1,46 @@
+<table class="table table-bordered table-hover table-striped">
+
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>书籍名称</th>
+        <th>价格</th>
+        <th>出版日期</th>
+        <th>出版社</th>
+        <th>作者</th>
+        <th>操作</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for book in book_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.price }}</td>
+            <td>{{ book.publishDate|date:"Y-m-d" }}</td>
+            <td>
+                <a href="/publish_book/{{ book.publish.pk }}/list" class="click_a">{{ book.publish.name }}</a>
+            </td>
+            <td>
+                {% for author in book.authors.all %}
+                    {% if forloop.last %}
+                        <span><a href="/author_book/{{ author.pk }}/list">{{ author.name }}</span></a>
+
+                    {% else %}
+                       <span><a href="/author_book/{{ author.pk }}/list">{{ author.name }}</span>,
+                    {% endif %}
+
+                {% endfor %}
+            </td>
+
+            <td>
+                <a href="/book/{{ book.pk }}/change/" class="btn btn-warning">编辑</a>
+                <a href="/book/{{ book.pk }}/delete/" class="btn btn-danger">删除</a>
+            </td>
+
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>

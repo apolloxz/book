@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/web/css/index.css">
+    <style>
+        .error {
+            color: red;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container ">
+    <div class="row">
+        <form class="col-md-6">
+            {% csrf_token %}
+            <div class="form-group">
+                <h5>请登录</h5>
+                <label for="user">用户名</label>
+                <input type="text" id="user" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="pwd">密码</label>
+                <input type="password" id="pwd" class="form-control">
+            </div>
+            <input type="button" class="btn btn-default login_btn" value="submit"><span class="error"></span>
+            <a href="/register/" class="btn btn-success pull-right">注册</a>
+        </form>
+    </div>
+</div>
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+<script src="/static/web/js/login.js"></script>
+</body>
+</html>
